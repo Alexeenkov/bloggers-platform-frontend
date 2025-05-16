@@ -1,0 +1,31 @@
+{
+  "name": "bloggers-platform-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "homepage": "https://alexeenkov.github.io/bloggers-platform",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "predeploy": "vite build",
+    "deploy": "gh-pages -d dist",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@chenfengyuan/vue-countdown": "2",
+    "aos": "^2.3.4",
+    "gh-pages": "6.3.0",
+    "vue": "3",
+    "vue-router": "4.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "5.2.1",
+    "sass": "1.86.0",
+    "sass-loader": "16.0.5",
+    "vite": "6.2.0"
+  },
+  "engines": {
+    "node": "^20.15.0"
+  },
+  "packageManager": "yarn@1.22.22"
+}

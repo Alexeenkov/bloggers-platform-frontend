@@ -1,0 +1,1 @@
+<template>  <div class="first-component">    Я первый компонент  </div></template><script setup></script><style scoped lang="scss">  @forward "@/components/FirstComponent/styles/first-component";</style>
