@@ -1,0 +1,1 @@
+<template>  <header class="header">    <div class="header__container">      <a href="#" class="header-logo">        <span class="header-logo__text">          Bloggers Platform        </span>      </a>    </div>  </header></template><script setup></script><style scoped lang="scss">  @forward "@/components/Header/styles/platform-header";</style>
