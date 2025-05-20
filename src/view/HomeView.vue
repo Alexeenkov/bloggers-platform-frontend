@@ -1,1 +1,21 @@
-<template>  <PlatformHeader /></template><script setup>import PlatformHeader from "@/components/Header/PlatformHeader.vue";</script><style lang="scss">@use "@/styles/_normalize";@use "@/styles/_fonts";</style><style scoped lang="scss">  .red {    width: 10px;    height: 10px;    background-color: red;    border-radius: 50%;  }</style>
+<template>
+  <PlatformHeader />
+</template>
+
+<script setup>
+import PlatformHeader from "@/components/Header/PlatformHeader.vue";
+</script>
+
+<style lang="scss">
+@use "@/styles/_normalize";
+@use "@/styles/_fonts";
+</style>
+
+<style scoped lang="scss">
+  .red {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+  }
+</style>
