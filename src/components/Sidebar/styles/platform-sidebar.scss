@@ -1,0 +1,60 @@
+@use "@/styles/_variables" as vars;
+
+$accent_color: #F8346B;
+
+.sidebar {
+  width: 252px;
+  height: 100%;
+
+  &__container {
+    padding-top: 43px;
+    padding-bottom: 43px;
+  }
+}
+
+.sidebar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: center;
+}
+
+.sidebar-list-item {
+  position: relative;
+
+  &--active {
+    color: $accent_color;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: 36px;
+      background-color: $accent_color;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+  }
+}
+
+.sidebar-list-item-img {
+  color: black;
+  padding-right: 12px;
+}
+
+.sidebar-list-item-link {
+  display: inline-flex;
+  height: 100%;
+  align-items: center;
+  text-decoration: none;
+
+  &__caption {
+    font-family: vars.$font_family;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

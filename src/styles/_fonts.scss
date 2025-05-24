@@ -1,13 +1,20 @@
-//@font-face {
-//  font-family: "Unutterable";
-//  font-style: normal;
-//  font-weight: 400;
-//  src: local("Unutterable"), url("@/assets/fonts/unutterable.woff2") format("woff2");
-//}
-//
-//@font-face {
-//  font-family: "Anime Ace";
-//  font-style: normal;
-//  font-weight: 400;
-//  src: local("Anime Ace"), url("@/assets/fonts/anime-Ace-v05.woff2") format("woff2");
-//}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Inter"), url("@/assets/fonts/Inter-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Inter"), url("@/assets/fonts/Inter-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Inter"), url("@/assets/fonts/Inter-SemiBold.woff2") format("woff2");
+}
