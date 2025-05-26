@@ -1,15 +1,15 @@
 <template>
   <section class="blog-list">
     <div class="blog-list__inner">
-      <BlogItem />
-      <BlogItem />
-      <BlogItem />
+      <PlatformBlogItem />
+      <PlatformBlogItem />
+      <PlatformBlogItem />
     </div>
   </section>
 </template>
 
 <script setup>
-  import BlogItem from "@/components/Blogs/BlogItem.vue";
+  import PlatformBlogItem from "@/components/Blogs/PlatformBlogItem.vue";
 </script>
 
 

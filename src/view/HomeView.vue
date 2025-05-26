@@ -4,10 +4,10 @@
     <PlatformSidebar class="container__sidebar" />
     <MainLayout>
       <template #navigation>
-        <SearchInput />
+        <PlatformSearchInput />
       </template>
       <template #inner>
-        <BlogList />
+        <PlatformBlogList />
       </template>
     </MainLayout>
   </main>
@@ -17,9 +17,8 @@
 import PlatformHeader from "@/components/Header/PlatformHeader.vue";
 import PlatformSidebar from "@/components/Sidebar/PlatformSidebar.vue";
 import MainLayout from "@/view/layouts/Main/MainLayout.vue";
-import SearchInput from "@/components/SearchInput/SearchInput.vue";
-import BlogList from "@/components/Blogs/BlogList.vue";
-import PostList from "@/components/Posts/PostList.vue";
+import PlatformSearchInput from "@/components/SearchInput/PlatformSearchInput.vue";
+import PlatformBlogList from "@/components/Blogs/PlatformBlogList.vue";
 </script>
 
 <style lang="scss">
