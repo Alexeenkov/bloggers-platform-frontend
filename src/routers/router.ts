@@ -1,0 +1,1 @@
+import {createRouter, createWebHistory} from "vue-router";import HomeView from "../view/HomeView.vue";export const router = createRouter({    routes: [{        path: '/bloggers-platform-frontend/',        component: HomeView,    }],    history: createWebHistory(),});

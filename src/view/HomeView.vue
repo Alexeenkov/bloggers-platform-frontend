@@ -7,7 +7,7 @@
         <SearchInput />
       </template>
       <template #inner>
-        <PostList />
+        <BlogList />
       </template>
     </MainLayout>
   </main>
