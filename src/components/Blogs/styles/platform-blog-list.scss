@@ -1,0 +1,11 @@
+.platform-blog-list-item {
+
+  &:not(:first-child) {
+    padding-top: 12px;
+  }
+
+  &:not(:last-child) {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #1D21261A;
+  }
+}

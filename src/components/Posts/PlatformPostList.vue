@@ -1,20 +1,18 @@
 <template>
-  <div class="post-list">
-    <PlatformPostItem class="post-list__item" />
-    <PlatformPostItem class="post-list__item" />
-    <PlatformPostItem class="post-list__item" />
-    <PlatformPostItem class="post-list__item" />
-    <PlatformPostItem class="post-list__item" />
-    <PlatformPostItem class="post-list__item" />
-    <PlatformPostItem class="post-list__item" />
-  </div>
+  <ul class="platform-post-list">
+    <PlatformPostItem class="platform-post-list__item" />
+    <PlatformPostItem class="platform-post-list__item" />
+    <PlatformPostItem class="platform-post-list__item" />
+    <PlatformPostItem class="platform-post-list__item" />
+    <PlatformPostItem class="platform-post-list__item" />
+  </ul>
 </template>
 
 <script setup>
-import PlatformPostItem from "@/components/Posts/PlatformPostItem.vue";
+import PlatformPostItem from "@/components/Posts/PlatformPost.vue";
 </script>
 
 
 <style scoped lang="scss">
-@forward "@/components/Posts/styles/post-list";
+@forward "@/components/Posts/styles/platform-post-list";
 </style>

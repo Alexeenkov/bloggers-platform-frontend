@@ -1,29 +1,37 @@
 <template>
-  <PlatformHeader />
-  <main class="container">
-    <PlatformSidebar class="container__sidebar" />
-    <MainLayout>
-      <template #navigation>
-        <PlatformSearchInput />
-      </template>
-      <template #inner>
-        <PlatformBlogList />
-      </template>
-    </MainLayout>
-  </main>
+  <LayoutMain>
+    <template #header>
+      <PlatformHeader />
+    </template>
+    <template #content>
+      <PlatformSidebar />
+      <LayoutList>
+        <template #navigation>
+          <PlatformSearchInput />
+        </template>
+        <template #content>
+          <PlatformBlogList />
+<!--          <PlatformPostList />-->
+        </template>
+      </LayoutList>
+    </template>
+  </LayoutMain>
 </template>
 
 <script setup>
 import PlatformHeader from "@/components/Header/PlatformHeader.vue";
-import PlatformSidebar from "@/components/Sidebar/PlatformSidebar.vue";
-import MainLayout from "@/view/layouts/Main/MainLayout.vue";
-import PlatformSearchInput from "@/components/SearchInput/PlatformSearchInput.vue";
+import LayoutMain from "@/view/layouts/Page/LayoutPage.vue";
+import PlatformPostList from "@/components/Posts/PlatformPostList.vue";
 import PlatformBlogList from "@/components/Blogs/PlatformBlogList.vue";
+import PlatformSidebar from "@/components/Sidebar/PlatformSidebar.vue";
+import LayoutList from "@/view/layouts/List/LayoutList.vue";
+import PlatformSearchInput from "@/components/SearchInput/PlatformSearchInput.vue";
 </script>
 
 <style lang="scss">
-@use "@/styles/_normalize";
+@use "@/styles/_reset";
 @use "@/styles/_fonts";
+@use "@/styles/_globals";
 
 #app {
   height: 100%;

@@ -1,11 +1,10 @@
 <template>
-  <section class="blog-list">
-    <div class="blog-list__inner">
-      <PlatformBlogItem />
-      <PlatformBlogItem />
-      <PlatformBlogItem />
-    </div>
-  </section>
+  <ul class="platform-blog-list">
+    <PlatformBlogItem class="platform-blog-list-item" />
+    <PlatformBlogItem class="platform-blog-list-item" />
+    <PlatformBlogItem class="platform-blog-list-item" />
+    <PlatformBlogItem class="platform-blog-list-item" />
+  </ul>
 </template>
 
 <script setup>
@@ -14,5 +13,5 @@
 
 
 <style scoped lang="scss">
-  @forward "@/components/Blogs/styles/blog-list";
+@forward "@/components/Blogs/styles/platform-blog-list";
 </style>
