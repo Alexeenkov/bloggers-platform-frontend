@@ -1,23 +1,21 @@
 <template>
-  <aside class="platform-sidebar">
-    <ul class="platform-sidebar-list">
-      <li class="platform-sidebar-list-item">
-        <a class="platform-sidebar-list-item__link platform-sidebar-list-item-link"
+  <aside class="sidebar">
+      <div class="sidebar__item sidebar-item">
+        <a class="sidebar-item__link sidebar-item-link"
            href="#"
         >
-          <ListIcon class="platform-sidebar-list-item-link__icon" />
+          <ListIcon class="sidebar-item-link__icon" />
           <span>Blogs</span>
         </a>
-      </li>
-      <li class="platform-sidebar-list-item platform-sidebar-list-item--active">
-        <a class="platform-sidebar-list-item__link platform-sidebar-list-item-link"
+      </div>
+      <div class="sidebar__item sidebar-item sidebar-item--active">
+        <a class="sidebar-item__link sidebar-item-link"
            href="#"
         >
-          <GridIcon class="platform-sidebar-list-item-link__icon" />
+          <GridIcon class="sidebar-item-link__icon" />
           <span>Posts</span>
         </a>
-      </li>
-    </ul>
+      </div>
   </aside>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
-  <header class="platform-header">
-    <a href="#" class="platform-header-logo">Bloggers Platform</a>
+  <header class="header">
+    <a href="#" class="header__logo">Bloggers Platform</a>
   </header>
 </template>
 

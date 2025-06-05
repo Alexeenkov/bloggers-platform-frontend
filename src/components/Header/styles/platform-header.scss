@@ -1,6 +1,6 @@
 @use "@/styles/_variables" as vars;
 
-.platform-header {
+.header {
   position: sticky;
   min-height: 60px;
   align-content: center;
@@ -8,13 +8,12 @@
   box-shadow: 0 1px 2px #1D21261A;
   padding-left: 64px;
   padding-right: 64px;
-}
 
-.platform-header-logo {
-  display: inline-block;
-  color: vars.$text_color;
-  text-decoration: none;
-  font-size: 26px;
-  font-weight: 600;
-  line-height: 36px;
+  &__logo {
+    display: inline-block;
+    color: vars.$text_color;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 36px;
+  }
 }

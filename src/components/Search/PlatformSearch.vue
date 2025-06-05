@@ -1,8 +1,8 @@
 <template>
   <div class="search">
-    <SearchIcon class="search-icon search__icon"/>
+    <SearchIcon class="search__icon"/>
     <input
-        class="search-input"
+        class="search__input"
         name="search"
         placeholder="Search"
         type="text" />
@@ -10,10 +10,10 @@
 </template>
 
 <script setup>
-import SearchIcon from '@/assets/icons/Search.vue';
+  import SearchIcon from '@/assets/icons/Search.vue';
 </script>
 
 
 <style scoped lang="scss">
-@forward "@/components/SearchInput/styles/platform-search-input";
+  @forward "@/components/Search/styles/platform-search";
 </style>

@@ -1,0 +1,28 @@
+.layout-default {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+
+  &__header {
+    width: 100%;
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+}
+
+.layout-default-content {
+  display: flex;
+
+  &__sidebar {
+    flex-shrink: 0;
+    width: 252px;
+  }
+
+  &__main {
+    flex-grow: 1;
+    background-color: #FAF7F8;
+  }
+}

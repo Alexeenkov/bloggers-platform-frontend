@@ -1,22 +1,20 @@
-@use "@/styles/_variables" as vars;
-
-.platform-sidebar {
-  min-width: 252px;
-  padding-top: 43px;
-  padding-bottom: 43px;
-}
-
-.platform-sidebar-list {
+.sidebar {
   display: flex;
   flex-direction: column;
   gap: 12px;
   text-align: center;
+  padding-top: 43px;
+  padding-bottom: 43px;
+
+  &__item {
+    min-height: 36px;
+  }
 }
 
-.platform-sidebar-list-item {
+.sidebar-item {
   position: relative;
-  min-height: 36px;
   align-content: center;
+  text-align: center;
 
   &__link {
     min-height: 24px;
@@ -40,7 +38,7 @@
   }
 }
 
-.platform-sidebar-list-item-link {
+.sidebar-item-link {
   display: inline-flex;
   align-items: center;
   gap: 12px;

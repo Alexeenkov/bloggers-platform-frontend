@@ -1,0 +1,21 @@
+.breadcrumbs {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+
+  &__item {
+    font-size: 12px;
+    line-height: 16px;
+    color: #1A1718;
+
+    &--root {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  &__separator {
+    color: #797476;
+  }
+}

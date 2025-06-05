@@ -1,0 +1,15 @@
+.platform-back-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #1A1718;
+
+  &__icon {
+    flex-shrink: 0;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
