@@ -1,1 +1,24 @@
-import {createRouter, createWebHistory} from "vue-router";import PageBlogs from "../pages/PageBlogs.vue";import PagePosts from "../pages/PagePosts.vue";export const router = createRouter({    routes: [        {            path: '/bloggers-platform-frontend/',            component: null,            redirect: to => `${to.path}blogs`,            children: [                {                    path: 'blogs',                    component: PageBlogs                },                {                    path: 'posts',                    component: PagePosts                }            ]        },    ],    history: createWebHistory(),});
+import {createRouter, createWebHistory} from "vue-router";
+import PageBlogs from "../pages/PageBlogs.vue";
+import PagePosts from "../pages/PagePosts.vue";
+
+export const router = createRouter({
+    routes: [
+        {
+            path: '/bloggers-platform-frontend/',
+            component: null,
+            redirect: to => `${to.path}blogs`,
+            children: [
+                {
+                    path: 'blogs',
+                    component: PageBlogs
+                },
+                {
+                    path: 'posts',
+                    component: PagePosts
+                }
+            ]
+        },
+    ],
+    history: createWebHistory(),
+});
