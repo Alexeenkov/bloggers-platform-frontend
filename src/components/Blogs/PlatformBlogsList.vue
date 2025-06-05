@@ -1,9 +1,9 @@
 <template>
-  <section class="blog-list">
-    <PlatformBlog class="blog-list__item" />
-    <PlatformBlog class="blog-list__item" />
-    <PlatformBlog class="blog-list__item" />
-    <PlatformBlog class="blog-list__item" />
+  <section class="blogs-list">
+    <PlatformBlog class="blogs-list__item" />
+    <PlatformBlog class="blogs-list__item" />
+    <PlatformBlog class="blogs-list__item" />
+    <PlatformBlog class="blogs-list__item" />
   </section>
 </template>
 
