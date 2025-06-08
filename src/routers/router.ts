@@ -1,6 +1,8 @@
 import {createRouter, createWebHistory} from "vue-router";
 import PageBlogs from "../pages/PageBlogs.vue";
 import PagePosts from "../pages/PagePosts.vue";
+import PageBlog from "../pages/PageBlog.vue";
+import PagePost from "../pages/PagePost.vue";
 
 export const router = createRouter({
     routes: [
@@ -14,8 +16,16 @@ export const router = createRouter({
                     component: PageBlogs
                 },
                 {
+                    path: 'blog',
+                    component: PageBlog
+                },
+                {
                     path: 'posts',
                     component: PagePosts
+                },
+                {
+                    path: 'post',
+                    component: PagePost
                 }
             ]
         },

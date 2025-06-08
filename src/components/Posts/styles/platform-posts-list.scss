@@ -1,6 +1,14 @@
 .posts-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 20px;
-  row-gap: 32px;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+    row-gap: 32px;
+  }
+
+  &__footer {
+    margin-top: 44px;
+    text-align: center;
+  }
 }

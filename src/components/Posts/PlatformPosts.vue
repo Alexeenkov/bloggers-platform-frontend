@@ -1,7 +1,10 @@
 <template>
   <section class="posts">
     <div class="posts__header posts-header">
-      <PlatformBreadcrumbs />
+      <PlatformBreadcrumbs
+          :pageName="'Posts'"
+          :pageLink="'posts'"
+      />
     </div>
 
     <div class="posts__content">

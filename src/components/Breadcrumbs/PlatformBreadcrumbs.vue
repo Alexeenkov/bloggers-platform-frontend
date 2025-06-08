@@ -1,17 +1,49 @@
 <template>
   <nav class="breadcrumbs">
-    <a class="breadcrumbs__item breadcrumbs__item--root"
-       href="#"
+    <router-link class="breadcrumbs__item breadcrumbs__item--root"
+       :to="pageLink"
     >
-      Blogs
-    </a>
-    <ArrowRight class="breadcrumbs__separator" />
-    <span class="breadcrumbs__item">The best blog in our village</span>
+      {{ pageName }}
+    </router-link>
+
+<!--    TODO: Убрать -->
+    <router-link class="breadcrumbs__item breadcrumbs__item--root"
+       to="#"
+       v-if="!pageName"
+    >
+      Test Page
+    </router-link>
+
+    <TriangleArrow
+        class="breadcrumbs__separator"
+        v-if="subpageName"
+    />
+    <span
+        class="breadcrumbs__item"
+        v-if="subpageName"
+    >
+      {{ subpageName }}
+    </span>
   </nav>
 </template>
 
 <script setup>
-  import ArrowRight from "@/assets/icons/ArrowRight.vue";
+  import TriangleArrow from "@/assets/icons/TriangleArrow.vue";
+
+  defineProps({
+    pageName: {
+      type: String,
+      required: true
+    },
+    pageLink: {
+      type: String,
+      required: true
+    },
+    subpageName: {
+      type: String,
+      required: false
+    }
+  });
 </script>
 
 <style scoped lang="scss">

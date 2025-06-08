@@ -1,0 +1,15 @@
+.button-more {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  cursor: pointer;
+
+  &__icon {
+    flex-shrink: 0;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

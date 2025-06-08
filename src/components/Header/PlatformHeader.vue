@@ -1,6 +1,11 @@
 <template>
   <header class="header">
-    <a href="#" class="header__logo">Bloggers Platform</a>
+    <router-link
+        to="/bloggers-platform-frontend/"
+        class="header__logo"
+    >
+      Bloggers Platform
+    </router-link>
   </header>
 </template>
 

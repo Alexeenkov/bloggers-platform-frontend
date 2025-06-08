@@ -1,35 +1,39 @@
+<!-- TODO: Добавить обёртку в <li> -->
 <template>
-  <a class="blogs-item"
-     href="#"
+  <router-link class="blogs-item"
+     to="blog"
   >
-    <picture class="blogs-item__picture">
-      <img
+    <picture class="blogs-item__picture blogs-item-picture">
+      <img class="blogs-item-picture__img"
           src="@/assets/images/empty-300.jpg"
           alt="image"
       >
     </picture>
     <div class="blogs-item__content blogs-item-content">
-      <h2 class="blogs-item-content__title">The best blog in our village</h2>
+      <h2 class="blogs-item-content__title"> {{ blog.name }} </h2>
       <p class="blogs-item-content__subtitle">
         Website:
         <a class="blogs-item-content__link"
-           href="https://www.youtube.com/"
+           :href="blog.websiteUrl"
            target="_blank"
         >
-          https://www.youtube.com/
+          {{ blog.websiteUrl }}
         </a>
       </p>
       <p class="blogs-item-content__description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor
+        {{ blog.description }}
       </p>
     </div>
-  </a>
+  </router-link>
 </template>
 
 <script setup>
-
+const props = defineProps({
+  blog: {
+    type: Object,
+    required: true
+  }
+})
 </script>
 
 

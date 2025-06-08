@@ -1,15 +1,24 @@
 <template>
+  <!-- TODO: Изменить на <ul> -->
   <section class="posts-list">
-    <PlatformPostsItem />
-    <PlatformPostsItem />
-    <PlatformPostsItem />
-    <PlatformPostsItem />
-    <PlatformPostsItem />
+    <div class="posts-list__wrapper">
+      <PlatformPostsItem
+        v-for="post in posts.items"
+        :key="post.id"
+        :postData="post"
+      />
+    </div>
+
+    <div class="posts-list__footer">
+      <PlatformButtonListMore />
+    </div>
   </section>
 </template>
 
 <script setup>
 import PlatformPostsItem from "@/components/Posts/PlatformPostsItem.vue";
+import PlatformButtonListMore from "@/components/ButtonListMore/PlatformButtonListMore.vue";
+import posts from "@/mocks/posts.json";
 </script>
 
 

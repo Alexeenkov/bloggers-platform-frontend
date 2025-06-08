@@ -3,14 +3,8 @@
 
   &__picture {
     flex-shrink: 0;
-    display:flex;
-    align-items:center;
-    justify-content: center;
     width: 156px;
     height: 156px;
-    border: 1px solid #DEDBDC;
-    border-radius: 50%;
-    overflow: hidden;
   }
 
   &__content {
@@ -20,6 +14,20 @@
   }
 }
 
+.blogs-item-picture {
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  border: 1px solid #DEDBDC;
+  border-radius: 50%;
+  overflow: hidden;
+
+  &__img {
+    object-fit: cover;
+  }
+}
+
+// TODO: вынести классы из blogs-item-content в blogs-item
 .blogs-item-content {
 
   &__title {
