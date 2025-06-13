@@ -70,8 +70,22 @@ const breadcrumbsItems = computed(() => ([
   }
 ]));
 
-const loadData = async () => {
-  const postMockData = await import(`@/mocks/posts/${postId}.json`);
+async function loadData() {
+  const postMockData = await fetch('https://bloggers-platform-server.vercel.app/api/posts', {
+    method: 'POST',
+    headers: {
+      Authorization: 'Basic YWRtaW46cXdlcnR5',
+      Accept: 'application/json',
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      "title": "string",
+      "shortDescription": "string",
+      "content": "string",
+      "blogId": "684c595f5f6f5eee90f976ed"
+    }),
+  });
+  console.log(await postMockData.json());
   post.value = postMockData.default;
   post.value.createdAtStr = new Date(post.value.createdAt).toLocaleDateString('ru-RU');
   const blogMockData = await import(`@/mocks/blogs/${post.value.blogId}.json`);
