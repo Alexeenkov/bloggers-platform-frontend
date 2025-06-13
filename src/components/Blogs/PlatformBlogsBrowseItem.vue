@@ -8,25 +8,23 @@
       >
     </picture>
     <div class="blogs-browse-item__content blogs-browse-item-content">
-      <h2 class="blogs-browse-item-content__title">The best blog in our village</h2>
+      <h2 class="blogs-browse-item-content__title"> {{ blog.name }} </h2>
       <p class="blogs-browse-item-content__date">
         Blog creation date:
-        <span class="blogs-browse-item-content__date--accent">12.12.2022</span>
+        <span class="blogs-browse-item-content__date--accent">{{ blog.createdAtStr }}</span>
       </p>
       <p class="blogs-browse-item-content__subtitle">
         Website:
         <a class="blogs-browse-item-content__link"
-           href="https://www.youtube.com/"
+           :href="blog.websiteUrl"
            target="_blank"
         >
-          https://www.youtube.com/
+          {{ blog.websiteUrl }}
         </a>
       </p>
       <div class="blogs-browse-item-content__description blogs-browse-item-content-description">
         <span class="blogs-browse-item-content-description__text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor
+          {{ blog.description }}
         </span>
         <div class="blogs-browse-item-content-description__footer">
           <PlatformButtonMore class="blogs-browse-item-content-description__button"/>
@@ -38,6 +36,14 @@
 
 <script setup>
 import PlatformButtonMore from "@/components/ButtonMore/PlatformButtonMore.vue";
+
+const props = defineProps({
+  blog: {
+    type: Object,
+    required: true
+  }
+});
+
 </script>
 
 

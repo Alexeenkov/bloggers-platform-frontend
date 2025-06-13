@@ -6,18 +6,11 @@
       {{ pageName }}
     </router-link>
 
-<!--    TODO: Убрать -->
-    <router-link class="breadcrumbs__item breadcrumbs__item--root"
-       to="#"
-       v-if="!pageName"
-    >
-      Test Page
-    </router-link>
-
     <TriangleArrow
         class="breadcrumbs__separator"
         v-if="subpageName"
     />
+
     <span
         class="breadcrumbs__item"
         v-if="subpageName"

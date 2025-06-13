@@ -1,32 +1,40 @@
 <template>
-  <section class="posts-browse">
+  <section class="posts-browse" v-if="post">
     <div class="posts-browse__breadcrumbs posts-browse-breadcrumbs">
-      <PlatformBreadcrumbs />
+      <PlatformBreadcrumbs
+        pageName="Posts"
+        pageLink="/bloggers-platform-frontend/posts"
+        :subpageName="post.title"
+      />
     </div>
 
     <nav class="posts-browse__navigation">
       <PlatformBackLink
         linkText="Back to posts"
-        linkPath="posts"
+        linkPath="/bloggers-platform-frontend/posts"
       />
     </nav>
 
     <div class="posts-browse__wrapper">
 
-      <a
+      <router-link v-if="blog"
           class="posts-browse__blog posts-browse-blog"
-          href="#"
+          :to="'/bloggers-platform-frontend/blogs/' + blog.id"
       >
         <picture class="posts-browse-blog__picture posts-browse-blog-picture">
-          <img src="@/assets/images/empty-48.jpg" alt="post" class="posts-browse-blog-picture__img">
+          <img
+              class="posts-browse-blog-picture__img"
+              src="@/assets/images/empty-48.jpg"
+              alt="post"
+          >
         </picture>
 
-        <p class="posts-browse-blog__title">Back-end blog</p>
-      </a>
+        <p class="posts-browse-blog__title"> {{ blog.name }} </p>
+      </router-link>
 
-      <p class="posts-browse__title">First day at the office</p>
+      <p class="posts-browse__title">{{ post.title }}</p>
 
-      <p class="posts-browse__date">12/12/2022 at 15:46:58</p>
+      <p class="posts-browse__date">{{ formatDate(post.createdAt) }}</p>
 
       <picture class="posts-browse__picture posts-browse-picture">
         <img
@@ -37,20 +45,7 @@
 
       <div class="posts-browse-description posts-browse__description">
         <p class="posts-browse-description__text">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit, magna felis vestibulum metus aptent velit, tempor
-          posuere natoque habitasse phasellus dignissim.
-        </p>
-        <p class="posts-browse-description__text">
-          Nec libero purus etiam venenatis velit cras nascetur euismod ornare sodales, ex ut augue sed vestibulum
-          molestie dis quisque laoreet, tempor ullamcorper mus odio nostra est dolor magna justo.
-        </p>
-        <p class="posts-browse-description__text">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit, magna felis vestibulum metus aptent velit, tempor
-          posuere natoque habitasse phasellus dignissim.
-        </p>
-        <p class="posts-browse-description__text">
-          Nec libero purus etiam venenatis velit cras nascetur euismod ornare sodales, ex ut augue sed vestibulum
-          molestie dis quisque laoreet, tempor ullamcorper mus odio nostra est dolor magna justo.
+          {{ post.shortDescription }}
         </p>
       </div>
     </div>
@@ -61,6 +56,42 @@
 <script setup>
 import PlatformBreadcrumbs from "@/components/Breadcrumbs/PlatformBreadcrumbs.vue";
 import PlatformBackLink from "@/components/BackLink/PlatformBackLink.vue";
+import {onBeforeMount, ref} from "vue";
+
+const pathName = window.location.pathname;
+const postId = pathName.slice(pathName.lastIndexOf('/') + 1);
+const post = ref(null);
+const blog = ref(null);
+
+async function loadData() {
+  const postMockData = await import(`@/mocks/posts/${postId}.json`);
+  post.value = postMockData.default;
+  post.value.createdAtStr = new Date(post.value.createdAt).toLocaleDateString('ru-RU');
+  const blogMockData = await import(`@/mocks/blogs/${post.value.blogId}.json`);
+  blog.value = blogMockData.default;
+}
+
+function formatDate(date) {
+  const dateObj = new Date(date);
+
+  const datePart = new Intl.DateTimeFormat('en-GB', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+  }).format(dateObj);
+
+  const timePart = new Intl.DateTimeFormat('en-GB', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  }).format(dateObj);
+
+  return `${datePart} at ${timePart}`;
+}
+
+onBeforeMount(() => {
+  loadData();
+});
 </script>
 
 

@@ -2,7 +2,7 @@
 <template>
   <router-link
       class="posts-item"
-      to="post"
+      :to="'/bloggers-platform-frontend/posts/' + post.id"
   >
     <picture class="posts-item__picture posts-item-picture">
       <img
@@ -25,9 +25,9 @@
         >
       </a>
       <div class="posts-item-body__content">
-        <h2 class="posts-item-body__title"> {{ postData.title }} </h2>
-        <p class="posts-item-body__description"> {{ postData.shortDescription }} </p>
-        <p class="posts-item-body__date"> {{ getDateFromString(postData.createdAt) }} </p>
+        <h2 class="posts-item-body__title"> {{ post.title }} </h2>
+        <p class="posts-item-body__description"> {{ post.shortDescription }} </p>
+        <p class="posts-item-body__date"> {{ post.createdAtStr }} </p>
       </div>
     </div>
   </router-link>
@@ -35,15 +35,11 @@
 
 <script setup>
 defineProps({
-  postData: {
+  post: {
     type: Object,
     required: true
   }
 });
-
-const getDateFromString = (string) => {
-  return new Date(string).toLocaleDateString('ru-RU');
-}
 
 </script>
 

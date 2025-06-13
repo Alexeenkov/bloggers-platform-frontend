@@ -16,7 +16,7 @@ export const router = createRouter({
                     component: PageBlogs
                 },
                 {
-                    path: 'blog',
+                    path: 'blogs/:id',
                     component: PageBlog
                 },
                 {
@@ -24,7 +24,7 @@ export const router = createRouter({
                     component: PagePosts
                 },
                 {
-                    path: 'post',
+                    path: 'posts/:id',
                     component: PagePost
                 }
             ]
