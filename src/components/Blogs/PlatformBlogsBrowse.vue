@@ -1,17 +1,13 @@
 <template>
   <section class="blogs-browse" v-if="blog">
     <div class="blogs-browse__breadcrumbs blogs-browse-breadcrumbs">
-      <PlatformBreadcrumbs
-          pageName="Blogs"
-          pageLink="/bloggers-platform-frontend/blogs"
-          :subpageName="blog.name"
-      />
+      <PlatformBreadcrumbs :items="breadcrumbsItems"/>
     </div>
 
     <div class="blogs-browse__navigation blogs-browse-navigation">
       <PlatformBackLink
           linkText="Back to blogs"
-          linkPath="/bloggers-platform-frontend/blogs"
+          :linkPath="BLOGS_PAGE_URL"
       />
     </div>
 
@@ -39,11 +35,22 @@ import PlatformBreadcrumbs from "@/components/Breadcrumbs/PlatformBreadcrumbs.vu
 import PlatformBackLink from "@/components/BackLink/PlatformBackLink.vue";
 import PlatformPostsList from "@/components/Posts/PlatformPostsList.vue";
 import PlatformBlogsBrowseItem from "@/components/Blogs/PlatformBlogsBrowseItem.vue";
-import {onBeforeMount, ref} from "vue";
+import {onBeforeMount, ref, computed} from "vue";
+import {BLOGS_PAGE_URL} from "@/constants/paths";
 
 const pathName = window.location.pathname;
 const blogId = pathName.slice(pathName.lastIndexOf('/') + 1);
 const blog = ref(null);
+
+const breadcrumbsItems = computed(() => ([
+  {
+    name: 'Blogs',
+    link: BLOGS_PAGE_URL,
+  },
+  {
+    name: blog.value?.name,
+  }
+]));
 
 async function loadData() {
   const mockData = await import(`@/mocks/blogs/${blogId}.json`);

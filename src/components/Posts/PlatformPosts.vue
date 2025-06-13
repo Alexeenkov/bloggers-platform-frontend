@@ -1,10 +1,7 @@
 <template>
   <section class="posts">
     <div class="posts__header posts-header">
-      <PlatformBreadcrumbs
-          :pageName="'Posts'"
-          :pageLink="'posts'"
-      />
+      <PlatformBreadcrumbs :items="breadcrumbsItems"/>
     </div>
 
     <div class="posts__content">
@@ -16,6 +13,12 @@
 <script setup>
 import PlatformPostsList from "@/components/Posts/PlatformPostsList.vue";
 import PlatformBreadcrumbs from "@/components/Breadcrumbs/PlatformBreadcrumbs.vue";
+
+const breadcrumbsItems = [
+  {
+    name: 'Posts',
+  }
+];
 </script>
 
 

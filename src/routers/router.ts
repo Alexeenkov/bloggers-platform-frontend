@@ -3,11 +3,12 @@ import PageBlogs from "@/pages/PageBlogs.vue";
 import PagePosts from "@/pages/PagePosts.vue";
 import PageBlog from "@/pages/PageBlog.vue";
 import PagePost from "@/pages/PagePost.vue";
+import {HOME_PAGE_URL} from "@/constants/paths";
 
 export const router = createRouter({
     routes: [
         {
-            path: '/bloggers-platform-frontend/',
+            path: HOME_PAGE_URL,
             component: null,
             redirect: to => `${to.path}blogs`,
             children: [

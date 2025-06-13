@@ -1,25 +1,21 @@
 <template>
   <section class="posts-browse" v-if="post">
     <div class="posts-browse__breadcrumbs posts-browse-breadcrumbs">
-      <PlatformBreadcrumbs
-        pageName="Posts"
-        pageLink="/bloggers-platform-frontend/posts"
-        :subpageName="post.title"
-      />
+      <PlatformBreadcrumbs :items="breadcrumbsItems"/>
     </div>
 
     <nav class="posts-browse__navigation">
       <PlatformBackLink
         linkText="Back to posts"
-        linkPath="/bloggers-platform-frontend/posts"
+        :linkPath="POSTS_PAGE_URL"
       />
     </nav>
 
     <div class="posts-browse__wrapper">
 
-      <router-link v-if="blog"
+      <RouterLink v-if="blog"
           class="posts-browse__blog posts-browse-blog"
-          :to="'/bloggers-platform-frontend/blogs/' + blog.id"
+          :to="`${BLOGS_PAGE_URL}/${blog.id}`"
       >
         <picture class="posts-browse-blog__picture posts-browse-blog-picture">
           <img
@@ -30,7 +26,7 @@
         </picture>
 
         <p class="posts-browse-blog__title"> {{ blog.name }} </p>
-      </router-link>
+      </RouterLink>
 
       <p class="posts-browse__title">{{ post.title }}</p>
 
@@ -56,20 +52,31 @@
 <script setup>
 import PlatformBreadcrumbs from "@/components/Breadcrumbs/PlatformBreadcrumbs.vue";
 import PlatformBackLink from "@/components/BackLink/PlatformBackLink.vue";
-import {onBeforeMount, ref} from "vue";
+import {computed, onBeforeMount, ref} from "vue";
+import {BLOGS_PAGE_URL, POSTS_PAGE_URL} from "@/constants/paths";
 
 const pathName = window.location.pathname;
 const postId = pathName.slice(pathName.lastIndexOf('/') + 1);
 const post = ref(null);
 const blog = ref(null);
 
-async function loadData() {
+const breadcrumbsItems = computed(() => ([
+  {
+    name: 'Posts',
+    link: POSTS_PAGE_URL,
+  },
+  {
+    name: post.value?.title,
+  }
+]));
+
+const loadData = async () => {
   const postMockData = await import(`@/mocks/posts/${postId}.json`);
   post.value = postMockData.default;
   post.value.createdAtStr = new Date(post.value.createdAt).toLocaleDateString('ru-RU');
   const blogMockData = await import(`@/mocks/blogs/${post.value.blogId}.json`);
   blog.value = blogMockData.default;
-}
+};
 
 function formatDate(date) {
   const dateObj = new Date(date);

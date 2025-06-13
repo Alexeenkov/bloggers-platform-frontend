@@ -1,22 +1,27 @@
 <template>
   <nav class="breadcrumbs">
-    <router-link class="breadcrumbs__item breadcrumbs__item--root"
-       :to="pageLink"
-    >
-      {{ pageName }}
-    </router-link>
+      <RouterLink
+          v-if="items[0].link"
+          :to="items[0].link"
+          class="breadcrumbs__item breadcrumbs__item--root"
+      >
+        {{ items[0].name }}
+      </RouterLink>
 
-    <IconTriangleArrow
-        class="breadcrumbs__separator"
-        v-if="subpageName"
-    />
+      <h1
+          v-else
+          class="breadcrumbs__item breadcrumbs__item--root"
+      >
+        {{ items[0].name }}
+      </h1>
 
-    <span
-        class="breadcrumbs__item"
-        v-if="subpageName"
-    >
-      {{ subpageName }}
-    </span>
+    <template v-if="items[1]">
+      <IconTriangleArrow class="breadcrumbs__separator" />
+
+      <span class="breadcrumbs__item">
+        {{ items[1].name }}
+      </span>
+    </template>
   </nav>
 </template>
 
@@ -24,18 +29,10 @@
   import IconTriangleArrow from "@/components/Icons/IconTriangleArrow.vue";
 
   defineProps({
-    pageName: {
-      type: String,
-      required: true
+    items: {
+      type: Array,
+      required: true,
     },
-    pageLink: {
-      type: String,
-      required: true
-    },
-    subpageName: {
-      type: String,
-      required: false
-    }
   });
 </script>
 

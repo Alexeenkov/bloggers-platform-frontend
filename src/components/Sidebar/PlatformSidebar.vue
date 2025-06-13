@@ -30,17 +30,18 @@
   import IconGrid from '@/components/Icons/IconGrid.vue'
   import {ref} from "vue";
   import {useRoute} from "vue-router";
+  import {BLOGS_PAGE_URL, POSTS_PAGE_URL} from "@/constants/paths";
 
   const currentPath = ref(useRoute().path);
 
   const blogs = {
     text: 'Blogs',
-    path: '/bloggers-platform-frontend/blogs',
+    path: BLOGS_PAGE_URL,
   };
 
   const posts = {
     text: 'Posts',
-    path: '/bloggers-platform-frontend/posts',
+    path: POSTS_PAGE_URL,
   };
 
 </script>

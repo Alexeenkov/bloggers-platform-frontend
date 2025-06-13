@@ -1,15 +1,16 @@
 <template>
   <header class="header">
-    <router-link
-        to="/bloggers-platform-frontend/"
+    <RouterLink
+        :to="HOME_PAGE_URL"
         class="header__logo"
     >
       Bloggers Platform
-    </router-link>
+    </RouterLink>
   </header>
 </template>
 
 <script setup>
+import {HOME_PAGE_URL} from "@/constants/paths";
 </script>
 
 <style scoped lang="scss">

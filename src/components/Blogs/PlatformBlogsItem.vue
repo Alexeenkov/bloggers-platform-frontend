@@ -1,7 +1,8 @@
 <!-- TODO: Добавить обёртку в <li> -->
 <template>
-  <router-link class="blogs-item"
-     :to="'/bloggers-platform-frontend/blogs/' + blog.id"
+  <RouterLink
+      class="blogs-item"
+      :to="`${BLOGS_PAGE_URL}/${blog.id}`"
   >
     <picture class="blogs-item__picture blogs-item-picture">
       <img class="blogs-item-picture__img"
@@ -24,10 +25,12 @@
         {{ blog.description }}
       </p>
     </div>
-  </router-link>
+  </RouterLink>
 </template>
 
 <script setup>
+import {BLOGS_PAGE_URL} from "@/constants/paths";
+
 const props = defineProps({
   blog: {
     type: Object,

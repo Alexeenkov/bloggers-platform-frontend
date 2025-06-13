@@ -1,8 +1,8 @@
 <!-- TODO: Добавить обёртку в <li> -->
 <template>
-  <router-link
+  <RouterLink
       class="posts-item"
-      :to="'/bloggers-platform-frontend/posts/' + post.id"
+      :to="`${POSTS_PAGE_URL}/${post.id}`"
   >
     <picture class="posts-item__picture posts-item-picture">
       <img
@@ -30,10 +30,12 @@
         <p class="posts-item-body__date"> {{ post.createdAtStr }} </p>
       </div>
     </div>
-  </router-link>
+  </RouterLink>
 </template>
 
 <script setup>
+import {POSTS_PAGE_URL} from "@/constants/paths";
+
 defineProps({
   post: {
     type: Object,

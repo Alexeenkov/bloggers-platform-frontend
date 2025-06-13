@@ -1,10 +1,7 @@
 <template>
   <section class="blogs">
     <div class="blogs__header blogs-header">
-      <PlatformBreadcrumbs
-          :pageName="'Blogs'"
-          :pageLink="'blogs'"
-      />
+      <PlatformBreadcrumbs :items="breadcrumbsItems"/>
     </div>
 
     <div class="blogs__navigation blogs-navigation">
@@ -21,6 +18,12 @@
 import PlatformBlogsList from "@/components/Blogs/PlatformBlogsList.vue";
 import PlatformBreadcrumbs from "@/components/Breadcrumbs/PlatformBreadcrumbs.vue";
 import PlatformSearch from "@/components/Search/PlatformSearch.vue";
+
+const breadcrumbsItems = [
+  {
+    name: 'Blogs',
+  }
+];
 </script>
 
 
