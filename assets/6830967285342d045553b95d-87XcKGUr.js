@@ -1,0 +1,1 @@
+const s="6830967285342d045553b95d",e="Блог обо мне",t="Блог о том, как не быть придурком, если вы уже придурок",c="https://example.com",o="2025-05-22T12:34:04.402Z",n=!1,d={id:s,name:e,description:t,websiteUrl:c,createdAt:o,isMembership:!1};export{o as createdAt,d as default,t as description,s as id,n as isMembership,e as name,c as websiteUrl};

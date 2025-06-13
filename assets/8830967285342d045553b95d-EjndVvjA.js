@@ -1,0 +1,1 @@
+const t="8830967285342d045553b95d",s="Блог о Илье",e="Как круто плавать на сапах",c="https://github.com",o="2025-04-21T12:34:04.402Z",i=!0,n={id:t,name:s,description:e,websiteUrl:c,createdAt:o,isMembership:!0};export{o as createdAt,n as default,e as description,t as id,i as isMembership,s as name,c as websiteUrl};

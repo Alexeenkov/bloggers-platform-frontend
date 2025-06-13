@@ -1,0 +1,1 @@
+const s="7830967285342d045553b95d",t="Блог о ЦМС",e="Что такое ЦМС и с чем его едят",o="https://youtube.com",c="2025-04-22T12:34:04.402Z",n=!1,d={id:s,name:t,description:e,websiteUrl:o,createdAt:c,isMembership:!1};export{c as createdAt,d as default,e as description,s as id,n as isMembership,t as name,o as websiteUrl};
