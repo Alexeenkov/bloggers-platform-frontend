@@ -4,30 +4,30 @@
           class="sidebar__item sidebar-item"
           :class="{ 'sidebar-item--active' : blogs.path === currentPath }"
       >
-        <router-link class="sidebar-item__link sidebar-item-link"
+        <RouterLink class="sidebar-item__link sidebar-item-link"
            :to="blogs.path"
         >
-          <ListIcon class="sidebar-item-link__icon" />
+          <IconList class="sidebar-item-link__icon" />
           <span>{{ blogs.text }}</span>
-        </router-link>
+        </RouterLink>
       </div>
       <div
           class="sidebar__item sidebar-item"
           :class="{ 'sidebar-item--active' : posts.path === currentPath }">
-        <router-link
+        <RouterLink
             class="sidebar-item__link sidebar-item-link"
             :to="posts.path"
         >
-          <GridIcon class="sidebar-item-link__icon" />
+          <IconGrid class="sidebar-item-link__icon" />
           <span>{{ posts.text }}</span>
-        </router-link>
+        </RouterLink>
       </div>
   </aside>
 </template>
 
 <script setup>
-  import ListIcon from '@/assets/icons/List.vue'
-  import GridIcon from '@/assets/icons/Grid.vue'
+  import IconList from '@/components/Icons/IconList.vue'
+  import IconGrid from '@/components/Icons/IconGrid.vue'
   import {ref} from "vue";
   import {useRoute} from "vue-router";
 

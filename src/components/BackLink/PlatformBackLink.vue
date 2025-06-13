@@ -1,14 +1,14 @@
 <template>
-  <router-link class="platform-back-link"
+  <RouterLink class="platform-back-link"
      :to="linkPath"
   >
-    <Arrow class="platform-back-link__icon"/>
+    <IconArrow class="platform-back-link__icon"/>
     <span class="platform-back-link__text"> {{ linkText }} </span>
-  </router-link>
+  </RouterLink>
 </template>
 
 <script setup>
-  import Arrow from "@/assets/icons/Arrow.vue";
+  import IconArrow from "@/components/Icons/IconArrow.vue";
   defineProps({
     linkText: {
       type: String,

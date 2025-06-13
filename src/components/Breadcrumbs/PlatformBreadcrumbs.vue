@@ -6,7 +6,7 @@
       {{ pageName }}
     </router-link>
 
-    <TriangleArrow
+    <IconTriangleArrow
         class="breadcrumbs__separator"
         v-if="subpageName"
     />
@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-  import TriangleArrow from "@/assets/icons/TriangleArrow.vue";
+  import IconTriangleArrow from "@/components/Icons/IconTriangleArrow.vue";
 
   defineProps({
     pageName: {

@@ -1,6 +1,6 @@
 <template>
   <div class="search">
-    <SearchIcon class="search__icon"/>
+    <IconSearch class="search__icon"/>
     <input
         class="search__input"
         name="search"
@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-  import SearchIcon from '@/assets/icons/Search.vue';
+  import IconSearch from '@/components/Icons/IconSearch.vue';
 </script>
 
 
