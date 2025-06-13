@@ -1,7 +1,7 @@
 <!-- TODO: Добавить обёртку в <li> -->
 <template>
   <router-link class="blogs-item"
-     :to="'/blogs/' + blog.id"
+     :to="'/bloggers-platform-frontend/blogs/' + blog.id"
   >
     <picture class="blogs-item__picture blogs-item-picture">
       <img class="blogs-item-picture__img"

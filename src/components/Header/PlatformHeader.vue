@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <router-link
-        to="/"
+        to="/bloggers-platform-frontend/"
         class="header__logo"
     >
       Bloggers Platform

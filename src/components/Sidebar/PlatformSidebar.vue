@@ -35,12 +35,12 @@
 
   const blogs = {
     text: 'Blogs',
-    path: '/blogs',
+    path: '/bloggers-platform-frontend/blogs',
   };
 
   const posts = {
     text: 'Posts',
-    path: '/posts',
+    path: '/bloggers-platform-frontend/posts',
   };
 
 </script>

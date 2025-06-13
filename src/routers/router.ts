@@ -7,7 +7,7 @@ import PagePost from "../pages/PagePost.vue";
 export const router = createRouter({
     routes: [
         {
-            path: '/',
+            path: '/bloggers-platform-frontend/',
             component: null,
             redirect: to => `${to.path}blogs`,
             children: [
