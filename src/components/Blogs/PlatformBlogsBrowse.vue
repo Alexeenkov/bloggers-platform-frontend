@@ -3,7 +3,7 @@
     <div class="blogs-browse__breadcrumbs blogs-browse-breadcrumbs">
       <PlatformBreadcrumbs
           pageName="Blogs"
-          pageLink="/bloggers-platform-frontend/blogs"
+          pageLink="/blogs"
           :subpageName="blog.name"
       />
     </div>
@@ -11,7 +11,7 @@
     <div class="blogs-browse__navigation blogs-browse-navigation">
       <PlatformBackLink
           linkText="Back to blogs"
-          linkPath="/bloggers-platform-frontend/blogs"
+          linkPath="/blogs"
       />
     </div>
 

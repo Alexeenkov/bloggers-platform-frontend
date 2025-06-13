@@ -2,7 +2,7 @@
 <template>
   <router-link
       class="posts-item"
-      :to="'/bloggers-platform-frontend/posts/' + post.id"
+      :to="'/posts/' + post.id"
   >
     <picture class="posts-item__picture posts-item-picture">
       <img

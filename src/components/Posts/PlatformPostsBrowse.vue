@@ -3,7 +3,7 @@
     <div class="posts-browse__breadcrumbs posts-browse-breadcrumbs">
       <PlatformBreadcrumbs
         pageName="Posts"
-        pageLink="/bloggers-platform-frontend/posts"
+        pageLink="/posts"
         :subpageName="post.title"
       />
     </div>
@@ -11,7 +11,7 @@
     <nav class="posts-browse__navigation">
       <PlatformBackLink
         linkText="Back to posts"
-        linkPath="/bloggers-platform-frontend/posts"
+        linkPath="/posts"
       />
     </nav>
 
@@ -19,7 +19,7 @@
 
       <router-link v-if="blog"
           class="posts-browse__blog posts-browse-blog"
-          :to="'/bloggers-platform-frontend/blogs/' + blog.id"
+          :to="'/blogs/' + blog.id"
       >
         <picture class="posts-browse-blog__picture posts-browse-blog-picture">
           <img
